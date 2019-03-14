@@ -80,7 +80,21 @@ class Fitness(object):
 
     def path_distance(self):
         """ Incomplete path distance calculation method. """
-        return
+        if self.distance == 0:
+            distance_path = 0
+
+            # Creates discrete path graph from matrix of city values
+            for iterator in range(len(self.path)):
+                current_city, next_city = self.path[iterator + 1], None
+                if iterator + 1 < len(self.path):
+                    next_city = self.path[iterator + 1]
+                else:
+                    next_city = self.path[0]
+
+                # Iteratively adds distance values to overall path distance measure
+                distance_path += current_city.calculate_euclidean_distance(next_city)
+            self.distance = distance_path
+        return self.distance
 
     def path_fitness(self):
         """ Incomplete path fitness score (inverse distance metric) calculation method. """
