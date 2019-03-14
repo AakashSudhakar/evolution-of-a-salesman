@@ -60,3 +60,15 @@ class City(object):
         """
         distance_x, distance_y = abs(self.x_pos - next_city.x_pos), abs(self.y_pos - next_city.y_pos)
         return np.sqrt((distance_x ** 2) + (distance_y ** 2))
+
+
+####################################################################################################
+########################################## MAIN RUN LOGIC ##########################################
+####################################################################################################
+
+
+def main():
+    return print("HELLO WORLD")
+
+if __name__ == "__main__":
+    main()
