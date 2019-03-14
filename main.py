@@ -35,8 +35,7 @@ class City(object):
         OUTPUT(S):
             N/A
         """
-        self.x_pos = x_pos
-        self.y_pos = y_pos
+        self.x_pos, self.y_pos = x_pos, y_pos
 
     def __repr__(self):
         """
@@ -79,7 +78,14 @@ class Fitness(object):
         self.fitness = float(0.0)
 
     def path_distance(self):
-        """ Incomplete path distance calculation method. """
+        """ 
+        Method to approximate overall path metric based on iterated walk across random city array. 
+        
+        INPUT(S):
+            N/A
+        OUTPUT(S):
+            Fitness().distance {int}
+        """
         if self.distance == 0:
             distance_path = 0
 
@@ -97,8 +103,17 @@ class Fitness(object):
         return self.distance
 
     def path_fitness(self):
-        """ Incomplete path fitness score (inverse distance metric) calculation method. """
-        return
+        """ 
+        Method to approximate path fitness score as inverse of path distance calculation. 
+        
+        INPUT(S):
+            - N/A
+        OUTPUT(S):
+            - Fitness().fitness {float}
+        """
+        if self.fitness == 0:
+            self.fitness = 1 / float(self.path_distance())
+        return self.fitness
 
 
 ####################################################################################################
