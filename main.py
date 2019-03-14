@@ -68,7 +68,9 @@ class City(object):
 
 
 def main():
-    return print("HELLO WORLD")
+    city_1, city_2 = City(0, 0), City(3, 4)
+    dist_12 = city_1.calculate_euclidean_distance(city_2)
+    return print("The distance between cities 1 and 2 is {} miles.".format(dist_12))
 
 if __name__ == "__main__":
     main()
