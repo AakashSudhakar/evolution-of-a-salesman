@@ -27,7 +27,7 @@ class City(object):
     """ Object architecture that contains structural logic for our city representation. """
     def __init__(self, x_pos, y_pos):
         """
-        Helper method to initialize our City class object with rectangular coordinate data.
+        Initializer (helper) method to fill our City class object with rectangular coordinate data.
 
         INPUT(S):
             - x_pos {float}
@@ -60,6 +60,31 @@ class City(object):
         """
         distance_x, distance_y = abs(self.x_pos - next_city.x_pos), abs(self.y_pos - next_city.y_pos)
         return np.sqrt((distance_x ** 2) + (distance_y ** 2))
+
+
+class Fitness(object):
+    """ Incomplete object. """
+    def __init__(self, path):
+        """ 
+        Initializer (helper) method to set our path (route), distance, and fitness score values 
+        upon object declaration. 
+
+        INPUT(S):
+            - path {list(int)}
+        OUTPUT(S):
+            N/A
+        """
+        self.path = path
+        self.distance = int(0)
+        self.fitness = float(0.0)
+
+    def path_distance(self):
+        """ Incomplete path distance calculation method. """
+        return
+
+    def path_fitness(self):
+        """ Incomplete path fitness score (inverse distance metric) calculation method. """
+        return
 
 
 ####################################################################################################
