@@ -14,7 +14,7 @@ This problem lies at the heart of combinatorial algorithmic mathematics and can 
 
 This project was created with reference to **Eric Stoltz**'s tutorial on _Towards Data Science_ regarding applying genetic algorithms to the Traveling Salesman problem. 
 
-You can access that tutorial [here](https://towardsdatascience.com/evolution-of-a-salesman-a-complete-genetic-algorithm-tutorial-for-python-6fe5d2b3ca3).
+You can access that tutorial [here](https://towardsdatascience.com/evolution-of-a-salesman-a-complete-genetic-algorithm-tutorial-for-python-6fe5d2b3ca35).
 
 ---
 
