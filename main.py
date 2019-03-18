@@ -12,11 +12,11 @@ DESCRIPTION:    Python project using genetic algorithms to approximate a solutio
 ####################################################################################################
 
 
-import numpy as np
-import pandas as pd
-import random as rand
-import operator as op
-import matplotlib.pyplot as plt
+import numpy as np                      # NumPy:        Numerical Mathematics
+import pandas as pd                     # Pandas:       Data Manipulation/Munging
+import random as rand                   # Random:       Random Operations
+import operator as op                   # Operator:     System Level Operations
+import matplotlib.pyplot as plt         # Matplotlib:   Data Visualization
 
 
 ####################################################################################################
@@ -62,7 +62,7 @@ class City(object):
 
 
 class Fitness(object):
-    """ Incomplete object. """
+    """ Object architecture that modifies genetic fitness score for choosing optimal city path. """
     def __init__(self, path):
         """ 
         Initializer (helper) method to set our path (route), distance, and fitness score values 
@@ -122,9 +122,9 @@ class Fitness(object):
 
 
 def main():
-    city_1, city_2 = City(0, 0), City(3, 4)
+    city_1, city_2, city_3 = City(0, 0), City(3, 4), City(5, 2)
     dist_12 = city_1.calculate_euclidean_distance(city_2)
-    return print("The distance between cities 1 and 2 is {} miles.".format(dist_12))
+    return print("The distance between cities 1->2 is {} miles.".format(dist_12))
 
 if __name__ == "__main__":
     main()
