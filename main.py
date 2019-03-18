@@ -120,6 +120,7 @@ class Fitness(object):
 ##################################### CITY-SPECIFIC OPERATIONS #####################################
 ####################################################################################################
 
+
 def create_city_walk_path(cities):
     """ Global function to select randomized city walk path across cities. """
     return rand.sample(cities, len(cities))
@@ -131,6 +132,14 @@ def create_initial_population(population_size, cities):
         population.append(create_city_walk_path(cities))
     return population
 
+def rank_paths(population):
+    """ Global function to produce ranked order of cities based on optimal fitness scores in order. """
+    fitness_results = dict()
+    for iterator in range(len(population)):
+        fitness_results[iterator] = Fitness(population[iterator]).path_fitness()
+    return sorted(fitness_results.items(), key=op.itemgetter(1), reverse=True)
+
+
 ####################################################################################################
 ########################################## MAIN RUN LOGIC ##########################################
 ####################################################################################################
@@ -140,7 +149,6 @@ def main():
     cities = [City(0, 0), City(3, 4), City(5, 2)]
     # dist_12 = city_1.calculate_euclidean_distance(city_2)
     # return print("The distance between cities 1->2 is {} miles.".format(dist_12))
-    print(create_city_walk_path(cities))
 
 if __name__ == "__main__":
     main()
