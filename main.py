@@ -16,7 +16,7 @@ import numpy as np                      # NumPy:        Numerical Mathematics
 import pandas as pd                     # Pandas:       Data Manipulation/Munging
 import random as rand                   # Random:       Random Operations
 import operator as op                   # Operator:     System Level Operations
-import matplotlib.pyplot as plt         # Matplotlib:   Data Visualization
+import matplotlib.pyplot as plt         # MatPlotLib:   Data Visualization
 
 
 ####################################################################################################
@@ -117,14 +117,30 @@ class Fitness(object):
 
 
 ####################################################################################################
+##################################### CITY-SPECIFIC OPERATIONS #####################################
+####################################################################################################
+
+def create_city_walk_path(cities):
+    """ Global function to select randomized city walk path across cities. """
+    return rand.sample(cities, len(cities))
+
+def create_initial_population(population_size, cities):
+    """ Global function to produce initial city population using random walk mechanics. """
+    population = list()
+    for _ in range(population_size):
+        population.append(create_city_walk_path(cities))
+    return population
+
+####################################################################################################
 ########################################## MAIN RUN LOGIC ##########################################
 ####################################################################################################
 
 
 def main():
-    city_1, city_2, city_3 = City(0, 0), City(3, 4), City(5, 2)
-    dist_12 = city_1.calculate_euclidean_distance(city_2)
-    return print("The distance between cities 1->2 is {} miles.".format(dist_12))
+    cities = [City(0, 0), City(3, 4), City(5, 2)]
+    # dist_12 = city_1.calculate_euclidean_distance(city_2)
+    # return print("The distance between cities 1->2 is {} miles.".format(dist_12))
+    print(create_city_walk_path(cities))
 
 if __name__ == "__main__":
     main()
